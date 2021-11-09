@@ -38,7 +38,6 @@ def scatter(scores, classes, title):
             xi = [scores[j, 0] for j in range(len(scores[:, 0])) if classes[j] == u]
             yi = [scores[j, 1] for j in range(len(scores[:, 1])) if classes[j] == u]
             plt.scatter(xi, yi, c=colors[i], s=60, edgecolors='k', label=str(u))
-
         plt.xlabel('PC1')
         plt.ylabel('PC2')
         # plt.legend(labplot,loc='lower right')
