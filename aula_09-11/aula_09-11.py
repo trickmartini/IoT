@@ -6,11 +6,9 @@ import matplotlib.pyplot as plt
 from scipy.signal import savgol_filter
 from sklearn.decomposition import PCA
 import warnings
+import getopt
 
 warnings.filterwarnings('ignore')
-
-
-
 
 
 def plot(x, y):
@@ -74,6 +72,25 @@ def calcula_intervalo(filePath, intervalos):
         scatter(scores, classes, titleAux)
 
 
-calcula_intervalo("nir.csv", 16)
+# pega argumentos linha comando
 
+filePath = ""
+interval = ""
+argv = sys.argv[1:]
 
+try:
+    options, args = getopt.getopt(argv, "f:i:",
+                                  ["file =",
+                                   "interval ="])
+except:
+    print("Error Message ")
+
+for name, value in options:
+    if name in ['-f', '--file']:
+        filePath = value
+    elif name in ['-i', '--interval']:
+        interval = value
+
+calcula_intervalo(filePath, int(interval))
+
+# "aula_09-11/nir.csv"
