@@ -93,3 +93,5 @@ for name, value in options:
 calcula_intervalo(filePath, int(interval))
 
 # "aula_09-11/nir.csv"
+
+# py .\aula_09-11\aula_09-11.py -f "aula_09-11/nir.csv" -i 3
